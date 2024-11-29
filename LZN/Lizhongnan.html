@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐!</title>
+    <style type="text/css">
+        h1 {text-align: center;background-color: rgb(193, 193, 246);padding: 20px;color: blue;opacity: 0.8;}
+        hr {border: 2px solid orange;margin: 0 auto;}
+        body{background-image: url(a.jpg);background-size: cover;}
+        #div0 {width: 900px;height: 670px;margin: 10px auto;
+            background-color: rgb(206, 241, 230);padding: 50px;
+            box-shadow: 50px 50px 50px #9fe4d0;border-radius: 25px;
+            background-image: url(b.jpg);background-size: cover;}
+        #content-left {width: 500px; height: 450px; float: left;
+                       margin-right: 10px; margin-top: 30px; margin-left: 20px; position: relative;}
+        #content-right {position: absolute; top: 650px; right: 1200px; z-index: 10;}
+        #footer{width: 900px;height: 50px;clear: both;text-align: center;color: blue;}
+        p{font-size: 24px;line-height: 1.5em;}
+        .slider-container {width: 500px;height: 400px;position: relative;overflow: hidden;
+                            margin: 0 auto;}
+        .slides {display: none;position: absolute;width: 100%;height: 100%;}
+        .slides img {width: 100%;height: 100%;}
+        .slide1 {display: block;}
+        img{border-radius: 25px;}
+        #img1:hover{transform: scale(1.5);transition: all 3s;}
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <h1>南&nbsp;&nbsp;哥&nbsp;&nbsp;生&nbsp;&nbsp;日&nbsp;&nbsp;快&nbsp;&nbsp;乐&nbsp;！</h1>
+        <hr><br>
+        <div>
+            <div id="content-left" class="">
+                <div class="slider-container">
+                    <div class="slides slide1">
+                        <img id="img1" src="16.jpg" alt="Image 16">
+                    </div>
+                    <div class="slides slide1">
+                        <img id="img1" src="1.jpg" alt="Image 1">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="2.jpg" alt="Image 2">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="3.jpg" alt="Image 3">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="4.jpg" alt="Image 4">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="5.jpg" alt="Image 5">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="6.jpg" alt="Image 6">
+                    </div>
+                    <div class="slides slide1">
+                        <img id="img1" src="7.jpg" alt="Image 7">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="8.jpg" alt="Image 8">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="9.jpg" alt="Image 9">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="10.jpg" alt="Image 10">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="11.jpg" alt="Image 11">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="12.jpg" alt="Image 12">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="13.jpg" alt="Image 13">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="14.jpg" alt="Image 14">
+                    </div>
+                    <div class="slides">
+                        <img id="img1" src="15.jpg" alt="Image 15">
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-right" class="">
+                <audio id="audio" controls="controls" loop>
+                    <source src="夜曲.mp3" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div id="footer" class="">版权所有&copy;ZhongNan集团出版社</div>
+        </div>
+
+        <script type="text/javascript">
+            var slideindex=0;
+            function ChangeSlides(){
+                slideindex++;
+                var slidesArr=document.getElementsByClassName("slides");
+                if(slideindex>=slidesArr.length) slideindex=0;
+                for(var i=0;i<slidesArr.length;i++){
+                    slidesArr[i].style.display='none';
+                }
+                slidesArr[slideindex].style.display='block';
+            }
+            setInterval(ChangeSlides,4000);
+        </script>
+
+        <script type="text/javascript">
+            alert("老登生日快乐！")
+            alert("祝哥越来越胖，胖死你！")
+        </script>
+    </div>
+</body>
+</html>

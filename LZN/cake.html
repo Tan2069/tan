@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细致的火焰生日蛋糕</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4b5;
+            font-family: 'Arial', sans-serif;
+        }
+        .cake {
+            position: relative;
+            width: 260px; /* 最大宽度 */
+            height: 200px; /* 蛋糕总高度 */
+            text-align: center;
+        }
+        .layer {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin: 0 auto; /* 居中对齐 */
+        }
+        .layer1 {
+            width: 60%; /* 第一层 */
+            height: 40px;
+            background-color: #f9f9d3;
+            position: absolute;
+            top: 0; /* 无缝衔接 */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .layer2 {
+            width: 80%; /* 第二层 */
+            height: 50px;
+            background-color: #ffcc66;
+            position: absolute;
+            top: 40px; /* 紧贴上一层 */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .layer3 {
+            width: 100%; /* 第三层 */
+            height: 60px;
+            background-color: #ff9966;
+            position: absolute;
+            top: 90px; /* 紧贴上一层 */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .candle {
+            position: absolute;
+            width: 12px;
+            height: 30px;
+            background-color: #ffcc00;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -25px; /* 调整蜡烛位置 */
+            border-radius: 6px;
+        }
+        .flame {
+            position: absolute;
+            top: -20px; /* 调整火焰位置 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 1) 0%, rgba(255, 102, 0, 0.8) 50%, rgba(255, 51, 0, 0.8) 100%);
+            border-radius: 50%; /* 圆形的基础 */
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* 形状为三角形 */
+            animation: flicker 0.1s infinite alternate;
+        }
+        .flame:before {
+            content: '';
+            position: absolute;
+            top: -10px; /* 调整高于基础火焰 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle, rgba(255, 153, 0, 1) 0%, rgba(255, 51, 0, 0.7) 70%, rgba(255, 204, 0, 0) 100%);
+            border-radius: 50%; /* 圆形的基础 */
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: flicker 0.1s infinite alternate;
+        }
+        .flame:after {
+            content: '';
+            position: absolute;
+            top: -15px; /* 调整高于基础火焰 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 1) 0%, rgba(255, 102, 0, 0.6) 70%, rgba(255, 51, 0, 0) 100%);
+            border-radius: 50%; /* 圆形的基础 */
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: flicker 0.1s infinite alternate;
+        }
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                opacity: 0.7;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+        .text {
+            font-size: 24px;
+            color: #663300;
+            margin-top: 10px; /* 调整文本位置 */
+        }
+    </style>
+</head>
+<body>
+    <div class="cake">
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+        <div class="text">生日快乐!</div>
+    </div>
+</body>
+</html>
